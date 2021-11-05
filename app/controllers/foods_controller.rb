@@ -1,5 +1,4 @@
 class FoodsController < ApplicationController
-
   before_action :set_post, only: %i[edit update destroy]
 
   def index
@@ -19,8 +18,7 @@ class FoodsController < ApplicationController
     @food = Food.find(params[:id])
   end
 
-  def edit
-  end
+  def edit; end
 
   def update
     @food.update!(food_params)
@@ -33,6 +31,7 @@ class FoodsController < ApplicationController
   end
 
   private
+
   def food_params
     params.require(:food).permit(:name, :comment)
   end
